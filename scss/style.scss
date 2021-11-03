@@ -1,0 +1,464 @@
+$color-white: #ffffff;
+$color-danger: crimson;
+$transition-03: ease 0.3s;
+$transition-05: ease 0.5s;
+$transition-08: ease 0.8s;
+$transition-1: ease 1s;
+
+*{
+    scroll-behavior: smooth;
+}
+// drak thame start
+.dark {
+    background-color: rgba(0, 0, 0, 0.74) !important;
+    color: $color-white !important;
+    transition: $transition-08;
+    -webkit-transition: $transition-08;
+    -moz-transition: $transition-08;
+    -ms-transition: $transition-08;
+    -o-transition: $transition-08;
+}
+
+.dark #section-description{
+    background-color: rgba(0, 0, 0, 0.74) !important;
+    color: $color-white !important;
+    transition: $transition-08
+}
+
+.dark footer{
+    background-color: rgba(0, 0, 0, 0.74) !important;
+    color: $color-white !important;
+    transition: $transition-08
+}
+.toggle-theme {
+    position: fixed;
+    bottom: calc(4rem - 10px); 
+    right: 10px;
+    height: 40px;
+    padding-top: 9px;
+    width: 40px;
+    background-color: #ffffff;
+    z-index: 1200;
+    color: crimson;
+    cursor: pointer;
+    border-radius: 10%;
+    font-size: 18px;
+    text-align: center;
+}
+// drak thame end
+
+.scroll-top{
+    visibility: hidden;
+    color: crimson;
+    padding: 5px 15px;
+    background-color: $color-danger;
+    border: 1px solid $color-danger;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: fixed !important;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    i{
+        color: white;
+    }
+    &:hover{
+        background-color: $color-white transparent; 
+        border: 1px solid $color-danger;
+    }
+}
+
+.scroll-visible{
+    visibility: visible;
+    opacity: 1;
+     &:hover{
+        transform: scale(1.1);
+        transition: $transition-08;
+    }
+}
+
+.bg-image {
+    background-image: url('../img/image-header.jpg');
+    height: 700px;
+    background-size: cover;
+    width:100%;
+    position: relative;
+    z-index: 1;
+}
+
+.sticky-nav {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height:90px;
+    padding-top: 25px;
+    transition: 0.3}  
+
+#nav-sticky{
+    margin-top: 20px;
+}
+
+.bg-dark{
+    opacity: .85 !important
+}
+
+nav{
+    a{
+        transition: $transition-05;
+        color: $color-white;
+        &:not(.navbar-brand):hover{
+            color: $color-danger;
+            // text-decoration: underline;
+        }
+    }
+    .navbar-brand:hover{
+        border: 1px solid $color-danger;
+        border-radius: 7px;
+        color: #ffffff;
+        transition: $transition-08;
+        padding: 5px
+    }
+
+    ul li{
+        list-style: none;
+        display: inline;
+    }
+}
+
+
+header{
+    h2{
+        color: $color-white;
+        margin-top: 20%;
+        width: 500px;
+    }
+    a{
+    width: 100px;
+        // z-index: -1;
+        // position: sticky;
+    }
+}
+@media only screen and (max-width: 576px){
+    .navbar-brand{
+        position: absolute;
+        top: 30px;
+        right: 20px;
+    }
+
+    header{
+        h2{
+            margin-top:  15rem;
+            width: 300px; 
+        }
+        span{
+            margin-top: 3rem;
+            width: 90% ;
+        }
+    }
+}
+.btn-active-border{
+    animation: pulse_01 2s ease infinite;
+}
+// animation btn start
+@keyframes pulse_01 {
+    0% {
+        transform: scale(0.94);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        transform: scale(0.94);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+
+    }
+}
+
+.btn-active-border:hover{
+    animation: none;
+}
+// animation end
+
+#section-description{
+    height: 450px;
+   button{
+        width: 100px;     
+    }
+}
+
+@mixin divider-class {
+    width: 50px;
+    height: 5px;
+    border-radius: 2px;
+    @content
+}
+
+.divider-white{
+    @include divider-class;
+    background-color: $color-white;
+}
+
+.divider-danger{
+    @include divider-class;
+    background-color: $color-danger;
+}
+
+
+.information-box{
+    padding: 20px;
+    &:hover{
+        //  box-shadow: 2px 5px 30px rgba(0,0,0,.1);
+     transition: $transition-05;
+     transform: scale(1.05);
+    }
+    span{
+        padding: 20px;
+    }
+}
+
+// animation heart start
+.fa-heart{
+    animation: pulse_02 2s ease infinite;
+}
+@keyframes pulse_02 {
+    0% {
+        transform: scale(0.90);
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(0.90);
+    }
+
+    100% {
+        transform: scale(0.90);
+    }
+}
+// animation heart end
+
+// animation svg start
+.robot-1{
+    background-image: url('../img/undraw_version_control_re_mg66.svg');
+    height: 400px;
+    width: 10%;
+    justify-content: center;
+    position: relative;
+    padding-left: 100px;
+    z-index: -1;
+    background-size: cover;
+    animation: pulse_03 2s ease infinite;
+}
+
+@keyframes pulse_03 {
+    0% {
+        transform: translateX(0%);
+    }
+
+    50% {
+        transform: translateX(1%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+// animation svg end
+
+// animation svg start
+.robot-2{
+    background-image: url('../img/robot1.png');
+    height: 550px;
+    width: 100%;
+    z-index: -1;
+    background-size: cover;
+    animation: pulse_04 2s ease infinite;
+}
+
+@keyframes pulse_04 {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(3%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+// animation svg end    
+#download-section{
+    height: 300px !important;
+    width: 100%;
+
+    P{
+        margin-top: 2rem;
+        padding: 10px;
+    }
+}
+
+#contact-use{
+    height: 150px !important;
+    a{
+        display: block !important; 
+        &:hover{
+            text-decoration: underline !important;
+        }
+    }
+    
+}
+
+footer{
+    height: 150px;
+    width: 100%;
+}
+
+// animation phone start
+.fa-phone{
+    animation: pulse_05 2s ease infinite;
+}
+
+@keyframes pulse_05 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+// animation phone end
+
+// animation senvelope start
+.fa-envelope{
+    animation: pulse_06 2s ease infinite;
+}
+
+@keyframes pulse_06 {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(5%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+// animation senvelope start
+
+/* on lode */
+.preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 2100;
+	background-color: rgb(218, 38, 77);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+
+  body {
+    animation: bugfix infinite 1s;
+    -webkit-animation: bugfix infinite 1s;
+  }
+  
+  @keyframes bugfix { from {padding:0;} to {padding:0;}}
+  @-webkit-keyframes bugfix { from {padding:0;} to {padding:0;}}
+  
+s{
+    color: red;
+}
+
+// mobile menu
+
+#my-header {
+    position: absolute !important;
+    top: 10px;
+    line-height: 44px;
+    text-align: right;
+    color: #fff;
+}
+
+// @media only screen and (max-width: 768px){
+//     .d-sm-none{
+//         display: none !important;
+//     }
+
+// }
